@@ -1,0 +1,6 @@
+# Ignore artifacts:
+out
+node_modules
+.pretterrc
+.pretterignore
+pnpm-lock.yaml

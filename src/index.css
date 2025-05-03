@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@font-face {
+	font-family: "Inter";
+	src: url("/fonts/Inter-Italic.ttf");
+	font-style: italic;
+	font-optical-sizing: auto;
+	font-style: normal;
+	font-variation-settings:
+    "wdth" 100;
+}
+
+@font-face {
+	font-family: "Inter";
+	src: url("/fonts/Inter.ttf");
+	font-optical-sizing: auto;
+	font-style: normal;
+	font-variation-settings:
+    "wdth" 100;
+}
+
+
+@theme {
+	--default-font-family: "Inter";
+	--color-primary-800: #202122;
+	--default-transition-duration: 250ms;
+}
+
+/* May just do a light custom varient */
+@custom-variant dark {
+  &:where([data-theme="dark"] *) {
+    @slot;
+  }
+}
+
+@layer theme {
+  [data-theme="dark"] {
+    --color-red-500: oklch(0.79 0.06 74.59);
+  }
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+.shadow-1 {
+	box-shadow: inset 0px 4px 11.5px -4px rgba(255, 255, 255, 15%), inset 0px -2px 10.600000381469727px -3px rgba(0, 0, 0, 50%);
+}
+
+.shadow-2 {
+  box-shadow: inset 0px 4px 11.5px -4px rgba(255, 255, 255, 15%), inset 0px -2px 10.600000381469727px -3px rgba(0, 0, 0, 50%), 0px -4px 9px 0px rgba(0, 0, 0, 10%);
+}
+
+.shadow-sunken {
+	box-shadow: inset 0px -4px 14.399999618530273px -7px rgba(255, 255, 255, 25%), inset 0px 4px 7.300000190734863px -1px rgba(0, 0, 0, 25%);
+}
+
+.shadow-sunken-hover:hover {
+	box-shadow: inset 0px -4px 14.399999618530273px -7px rgba(255, 255, 255, 5%), inset 0px 4px 7.300000190734863px -1px rgba(0, 0, 0, 20%);
+}
